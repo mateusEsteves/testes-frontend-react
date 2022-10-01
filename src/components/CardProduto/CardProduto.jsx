@@ -1,7 +1,6 @@
 import { Button, Card, CardMedia, Typography } from "@mui/material";
 import { useCallback, useContext, useState } from "react";
 import { CarrinhoContext } from "../Carrinho/CarrinhoContext";
-import styles from "./CardProduto.module.css";
 import SeletorQuantidade from "../SeletorQuantidade/SeletorQuantidade";
 import { Stack } from "@mui/system";
 
@@ -17,7 +16,7 @@ export default function CardProduto({ item }) {
   }, [item, quantidade]);
 
   return (
-    <Card className={styles.card__container}>
+    <Card sx={{ padding: 2 }}>
       <Stack spacing={2}>
         <Typography variant="subtitle2">{item.nome}</Typography>
 

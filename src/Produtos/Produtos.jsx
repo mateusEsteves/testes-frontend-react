@@ -7,8 +7,8 @@ export default function Produtos() {
   const produtos = ListaProdutos;
 
   return (
-    <Grid container>
-      <Grid item xs={8}>
+    <Grid container padding={2}>
+      <Grid item xs={9}>
         <Container>
           <Grid container spacing={2}>
             {produtos.map((item) => (
@@ -19,7 +19,7 @@ export default function Produtos() {
           </Grid>
         </Container>
       </Grid>
-      <Grid item xs={4}>
+      <Grid item xs={3}>
         <Box>
           <Carrinho />
         </Box>

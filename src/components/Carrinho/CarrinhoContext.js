@@ -1,5 +1,5 @@
 import { createContext, useReducer } from "react";
-import { carrinhoReducer } from './CarrinhoReducer';
+import { carrinhoReducer } from "./CarrinhoReducer";
 
 export const CarrinhoContext = createContext({
   itens: [],
