@@ -1,0 +1,19 @@
+.seletorQuantidade {
+  display: flex;
+  justify-content: center;
+}
+
+.seletorQuantidade__input input {
+  padding: 4px 14px;
+}
+
+.seletorQuantidade_botao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.seletorQuantidade_botao button {
+  display: inline-block;
+  padding: 4px;
+}
