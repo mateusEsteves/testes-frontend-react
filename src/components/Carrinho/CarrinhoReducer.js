@@ -11,6 +11,8 @@ export function carrinhoReducer(state, action) {
 }
 
 function inserirOuAlterarItem(state, payload) {
+  if (payload.quantidade === 0) return state.itens;
+
   const itemIndex = state.itens.findIndex((i) => i.id === payload.id);
 
   let itens = [];

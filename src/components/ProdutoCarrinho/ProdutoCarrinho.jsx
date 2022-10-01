@@ -10,7 +10,7 @@ export default function ProdutoCarrinho({
 }) {
   return (
     <Grid container spacing={2} padding={2} marginLeft={0}>
-      <Grid item xs={8}>
+      <Grid item xs={6}>
         <Stack>
           <Typography variant="subtitle2" fontSize="small">
             {nome}
@@ -23,7 +23,7 @@ export default function ProdutoCarrinho({
           </Typography>
         </Stack>
       </Grid>
-      <Grid item xs={4}>
+      <Grid item xs={6}>
         <Grid
           container
           direction="column"

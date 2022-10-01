@@ -1,4 +1,13 @@
-import { Button, Card, TextField, Alert, AlertTitle } from "@mui/material";
+import {
+  Button,
+  Card,
+  TextField,
+  Alert,
+  AlertTitle,
+  Container,
+  Box,
+  Stack,
+} from "@mui/material";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../services/login";
@@ -13,7 +22,7 @@ export default function Login() {
     try {
       const dadosUsuario = await login(email, password);
       sessionStorage.setItem("nomeUsuario", dadosUsuario.name);
-      
+
       navigate("/produtos");
       setError(false);
     } catch {
@@ -22,35 +31,35 @@ export default function Login() {
   };
 
   return (
-    <>
-      <div
-        style={{
-          maxWidth: "400px",
-          maxHeight: "600px",
-        }}
-      >
-        <Card
-          style={{
-            padding: "32px",
-          }}
-        >
-          <TextField
-            variant="standard"
-            type="text"
-            label="Email"
-            style={{ display: "block", marginBottom: "24px" }}
-            fullWidth
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <TextField
-            variant="standard"
-            type="password"
-            label="Password"
-            style={{ display: "block", marginBottom: "24px" }}
-            fullWidth
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <Button onClick={() => entrar(email, password)}>Entrar</Button>
+    <Container
+      sx={{
+        height: "100vh",
+        justifyContent: "center",
+        alignItems: "center",
+        display: "flex",
+      }}
+    >
+      <Box minWidth={400}>
+        <Card sx={{ padding: 4 }}>
+          <Stack spacing={3}>
+            <TextField
+              variant="standard"
+              type="text"
+              label="Email"
+              fullWidth
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <TextField
+              variant="standard"
+              type="password"
+              label="Password"
+              fullWidth
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <Button onClick={() => entrar(email, password)} fullWidth variant="contained">
+              Entrar
+            </Button>
+          </Stack>
         </Card>
 
         {error && (
@@ -58,7 +67,7 @@ export default function Login() {
             Verifique seu usuário e senha
           </Alert>
         )}
-      </div>
-    </>
+      </Box>
+    </Container>
   );
 }
