@@ -3,7 +3,6 @@ import {
   Card,
   TextField,
   Alert,
-  AlertTitle,
   Container,
   Box,
   Stack,
@@ -56,7 +55,11 @@ export default function Login() {
               fullWidth
               onChange={(e) => setPassword(e.target.value)}
             />
-            <Button onClick={() => entrar(email, password)} fullWidth variant="contained">
+            <Button
+              onClick={() => entrar(email, password)}
+              fullWidth
+              variant="contained"
+            >
               Entrar
             </Button>
           </Stack>
